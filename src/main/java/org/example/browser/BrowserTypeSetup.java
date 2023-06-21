@@ -17,7 +17,7 @@ public class BrowserTypeSetup { // класс настройки типа бра
         options.addArguments("--remote-allow-origins=*");
         switch (CURRENT_BROWSER) {
             case YANDEX:
-                System.setProperty("webdriver.chrome.driver", "C:/Study/QA_Automation_Java/yandexdriver.exe"); //??
+                System.setProperty("webdriver.chrome.driver", "...yandexdriver.exe"); //?? какой путь???
                 driver = new ChromeDriver(options);
                 break;
             case CHROME:
