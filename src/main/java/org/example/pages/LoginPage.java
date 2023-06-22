@@ -3,50 +3,65 @@ package org.example.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+
+// Страница регистрации пользователя (Создали page object — класс для страницы)
 public class LoginPage {
 
-    private final WebDriver driver;
-    private final By registerLink = By.xpath(".//a[text()='Зарегистрироваться']");
+    private final WebDriver driver; // Добавили поле driver
+
+
+    // Добавляем локаторы:
+    private final By registrationLink = By.xpath(".//a[text()='Зарегистрироваться']");
     private final By enterHeader = By.xpath(".//h2[text()='Вход']");
     private final By enterButton = By.xpath(".//button[text()='Войти']");
     private final By emailField = By.xpath(".//form/fieldset[1]/div/div/input");
     private final By passwordField = By.xpath(".//form/fieldset[2]/div/div/input");
     private final By restorePasswordLink = By.xpath(".//a[text()='Восстановить пароль']");
 
-    public LoginPage(WebDriver driver) {
+
+    // Добавили конструктор класса page object
+    public LoginPage(WebDriver driver) { // Инициализировали в нём поле driver
         this.driver = driver;
     }
 
-    public void clickOnRegisterLink(){
-        driver.findElement(registerLink).click();
+
+    // Методы:
+    // метод кликает на ссылку "Зарегестрироваться"
+    public void clickOnRegistrationLink() {
+        driver.findElement(registrationLink).click();
     }
 
-    public void enterEmail(String email){
+    // метод кликает на поле "Email" и вводит новое значения из параметра
+    public void enterEmail(String email) {
         driver.findElement(emailField).click();
         driver.findElement(emailField).sendKeys(email);
     }
 
-    public void enterPassword(String password){
+    // метод кликает на поле "Пароль" и вводит новое значения из параметра
+    public void enterPassword(String password) {
         driver.findElement(passwordField).click();
         driver.findElement(passwordField).sendKeys(password);
     }
 
-    public void clickOnEnterButton(){
+    // метод кликает на кнопку "Войти"
+    public void clickOnEnterButton() {
         driver.findElement(enterButton).click();
     }
 
-    public void clickOnRestorePasswordLink(){
+    // метод кликает на ссылку "Восстановить пароль"
+    public void clickOnRestorePasswordLink() {
         driver.findElement(restorePasswordLink).click();
     }
 
-    public void login(String email, String password){
+    // метод для логина пользователя и клик на кнопку "Войти"
+    public void login(String email, String password) {
         enterEmail(email);
         enterPassword(password);
         clickOnEnterButton();
     }
 
+    // метод получить заголовок "Вход"
     public By getEnterHeader() {
-
         return enterHeader;
     }
 

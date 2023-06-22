@@ -9,6 +9,7 @@ public class RegistrationPage {
 
     private final WebDriver driver; // Добавили поле driver
 
+
     // Добавляем локаторы:
     // локатор поля "Имя"
     private final By nameField = By.xpath(".//form/fieldset[1]/div/div/input");
@@ -17,7 +18,7 @@ public class RegistrationPage {
     // локатор поля "пароль"
     private final By passwordField = By.xpath(".//form/fieldset[3]/div/div/input");
     // локатор кнопки "Зарегистрироваться"
-    private final By registrationButton = By.xpath(".//button[text()='Зарегистрироваться']"); //??
+    private final By registrationButton = By.xpath(".//button[text()='Зарегистрироваться']");
     // локатор текста ошибки "Некорректный пароль"
     private final By incorrectPassword = By.xpath(".//p[text()='Некорректный пароль']");
     // локатор кнопки "Войти"
@@ -67,8 +68,8 @@ public class RegistrationPage {
         driver.findElement(signInButton).click();
     }
 
-    // метод получить некорректный пароль
-    public By getIncorrectPassword() { //??
+    // метод получить текст ошибки "Некорректный пароль"
+    public By getIncorrectPassword() {
         return incorrectPassword;
     }
 

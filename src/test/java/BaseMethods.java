@@ -1,7 +1,8 @@
-package org.example.api;
-
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import org.example.api.User;
+import org.example.api.UserLogin;
+import org.example.api.UserRegistration;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
@@ -89,6 +90,5 @@ public class BaseMethods {
     public String getIncorrectPassword() { return incorrectPassword; }
 
     public UserLogin getLoginIncorrectUser() { return loginIncorrectUser; }
-
 
 }

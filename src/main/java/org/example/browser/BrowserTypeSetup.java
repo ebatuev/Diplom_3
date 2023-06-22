@@ -9,7 +9,7 @@ import static org.openqa.selenium.remote.Browser.CHROME;
 
 public class BrowserTypeSetup { // класс настройки типа браузера BrowserTypeSetup
 
-    private final static Browser CURRENT_BROWSER = Browser.CHROME;
+    private final static Browser CURRENT_BROWSER = Browser.CHROME; // выбираем какой браузер запускать CHROME или YANDEX
     private static final ChromeOptions options = new ChromeOptions();
 
     public static WebDriver browserDriverSetUp(){
@@ -17,7 +17,7 @@ public class BrowserTypeSetup { // класс настройки типа бра
         options.addArguments("--remote-allow-origins=*");
         switch (CURRENT_BROWSER) {
             case YANDEX:
-                System.setProperty("webdriver.chrome.driver", "...yandexdriver.exe"); //?? какой путь???
+                System.setProperty("webdriver.chrome.driver", "/Users/evgeniybatuev/Downloads/yandexdriver.exe");
                 driver = new ChromeDriver(options);
                 break;
             case CHROME:

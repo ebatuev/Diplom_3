@@ -60,3 +60,11 @@
 3. Описать общие шаги для пользователя и вынести их в класс User.
    Класс являются наследниками класса PathAPI, где хранятся ручки.
 
+4. Добавить класс с настройкой запуска браузера (Google Chrome и Яндекс.Браузер)
+
+5. Создали page object — классы для страниц (RegistrationPage, LoginPage, MainPage, ProfilePage и ForgotPasswordPage) и описал элементы
+
+6. Написал тестовые классы RegistrationUserTest, LoginUserTest и  NavigationTest.
+
+7. Составил Allure-отчёт.
+

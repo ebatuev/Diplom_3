@@ -1,6 +1,6 @@
 package org.example.browser;
 
-public class Browser {
+public enum Browser {
     YANDEX,
     CHROME
 }
