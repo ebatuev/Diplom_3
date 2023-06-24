@@ -51,4 +51,31 @@ public class NavigationTest extends BaseMethods { // класс NavigationTest -
         Assert.assertEquals("Неверный текст! Должны быть Начинки","Начинки", mainPage.getTextFromTheChosenElement()); // проверяет текст через метод assertEquals
     }
 
+    @Test
+    @DisplayName("Работа перехода на раздел «Булки»")
+    public void correctTransitionsBetweenChaptersIngredientsAndBuns() {
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.clickOnIngredientsChapter();
+        mainPage.clickOnBunsChapter();
+        Assert.assertEquals("Неверный текст! Должны быть Булки","Булки", mainPage.getTextFromTheChosenElement()); // проверяет текст через метод assertEquals
+    }
+
+    @Test
+    @DisplayName("Работа перехода на раздел «Соусы»")
+    public void correctTransitionsBetweenChaptersIngredientsAndSauces() {
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.clickOnIngredientsChapter();
+        mainPage.clickOnSaucesChapter();
+        Assert.assertEquals("Неверный текст! Должны быть Соусы", "Соусы", mainPage.getTextFromTheChosenElement()); // проверяет текст через метод assertEquals
+    }
+
+    @Test
+    @DisplayName("Работа перехода на раздел «Начинки»")
+    public void correctTransitionsBetweenChaptersSaucesAndIngredients() {
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.clickOnSaucesChapter();
+        mainPage.clickOnIngredientsChapter();
+        Assert.assertEquals("Неверный текст! Должны быть Начинки","Начинки", mainPage.getTextFromTheChosenElement()); // проверяет текст через метод assertEquals
+    }
+
 }

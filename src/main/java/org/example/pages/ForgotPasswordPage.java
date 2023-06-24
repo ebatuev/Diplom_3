@@ -1,5 +1,6 @@
 package org.example.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -22,6 +23,7 @@ public class ForgotPasswordPage { // Страница с забытым паро
 
     // Методы:
     // метод кликнуть на ссылку "Вспомнили пароль?"
+    @Step("кликнуть на ссылку Вспомнили пароль?")
     public void clickOnEnterLinkOnForgotPasswordPage(){
         driver.findElement(enterLinkOnForgotPasswordPage).click();
     }

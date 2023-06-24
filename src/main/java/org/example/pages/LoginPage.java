@@ -1,5 +1,6 @@
 package org.example.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -27,33 +28,39 @@ public class LoginPage {
 
     // Методы:
     // метод кликает на ссылку "Зарегестрироваться"
+    @Step("Клик на ссылку Зарегестрироваться")
     public void clickOnRegistrationLink() {
         driver.findElement(registrationLink).click();
     }
 
     // метод кликает на поле "Email" и вводит новое значения из параметра
+    @Step("Клик на поле Email и вводит новое значения из параметра")
     public void enterEmail(String email) {
         driver.findElement(emailField).click();
         driver.findElement(emailField).sendKeys(email);
     }
 
     // метод кликает на поле "Пароль" и вводит новое значения из параметра
+    @Step("Клик на поле Пароль и вводит новое значения из параметра")
     public void enterPassword(String password) {
         driver.findElement(passwordField).click();
         driver.findElement(passwordField).sendKeys(password);
     }
 
     // метод кликает на кнопку "Войти"
+    @Step("Клик на кнопку Войти")
     public void clickOnEnterButton() {
         driver.findElement(enterButton).click();
     }
 
     // метод кликает на ссылку "Восстановить пароль"
+    @Step("Клик на ссылку Восстановить пароль")
     public void clickOnRestorePasswordLink() {
         driver.findElement(restorePasswordLink).click();
     }
 
     // метод для логина пользователя и клик на кнопку "Войти"
+    @Step("Логин пользователя и клик на кнопку Войти")
     public void login(String email, String password) {
         enterEmail(email);
         enterPassword(password);
@@ -61,6 +68,7 @@ public class LoginPage {
     }
 
     // метод получить заголовок "Вход"
+    @Step("Получить заголовок Вход")
     public By getEnterHeader() {
         return enterHeader;
     }
